@@ -25,7 +25,6 @@
 (require 'setup-editing)
 
 
-
 ;; function-args
 ;; (require 'function-args)
 ;; (fa-config-default)
@@ -38,10 +37,18 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit dtrt-indent counsel-projectile company clean-aindent-mode anzu))))
+    (zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit dtrt-indent counsel-projectile company clean-aindent-mode anzu sr-speedbar))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+
+;; Package sr-speedbar
+(use-package sr-speedbar
+  :config (global-set-key [f9] (lambda ()
+                                 (interactive)
+                                 (sr-speedbar-toggle)
+                                 (sr-speedbar-refresh-toggle))))
